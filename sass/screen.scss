@@ -44,7 +44,7 @@ p, a {
 }
 .absolute-center {
     width: 50%;
-    height: 50px;
+    height: 100px;
     overflow: auto;
     margin: auto;
     position: absolute;
@@ -55,29 +55,31 @@ p, a {
     text-align: center;
     .switcher {
         font-size: 12px;
-        width: 70px;
+        //width: 70px;
         cursor: pointer;
-        display: none;
+        //display: none;
+        margin-top: 30px;
+        text-transform: uppercase;
     }
     .colour-field {
         font-weight: 300;
         font-size: 37px;
         text-transform: uppercase;
         letter-spacing: 5px;
-        margin-right: 20px;
-        width: 300px;
+        //margin-right: 20px;
+        //width: 300px;
     }
     .rgb-colour-field {
         font-weight: 300;
         font-size: 37px;
         text-transform: uppercase;
         letter-spacing: 5px;
-        margin-right: 20px;
-        width: 320px;
+        //margin-right: 20px;
+       // width: 320px;
         
     }
     p {
-        display: inline-block;
+        //display: inline-block;
         vertical-align: bottom;
     }
 }
