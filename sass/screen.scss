@@ -1,0 +1,91 @@
+@import "compass/reset";
+ body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    background-color: #dbb623;
+    color: white;
+}
+p, a {
+    //        font-size: 16px;
+    font-weight: 400;
+    color: white;
+    //text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.info {
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    margin-top: 5px;
+    //text-transform: lowercase;
+    position: fixed;
+    left: 20px;
+    bottom: 10px;
+    cursor: pointer;
+}
+.contact {
+    display: none;
+    position: fixed;
+    left: 60px;
+    bottom: 20px;
+    font-size: 11px;
+    text-transform: lowercase;
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+.header {
+    padding: 20px;
+}
+.center-container {
+    position: relative;
+}
+.absolute-center {
+    width: 50%;
+    height: 50px;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    .switcher {
+        font-size: 12px;
+        width: 70px;
+        cursor: pointer;
+        display: none;
+    }
+    .colour-field {
+        font-weight: 300;
+        font-size: 37px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-right: 20px;
+        width: 300px;
+    }
+    .rgb-colour-field {
+        font-weight: 300;
+        font-size: 37px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-right: 20px;
+        width: 320px;
+        
+    }
+    p {
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

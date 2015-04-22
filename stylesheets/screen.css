@@ -1,0 +1,171 @@
+/* line 5, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 2, ../sass/screen.scss */
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  background-color: #dbb623;
+  color: white;
+}
+
+/* line 9, ../sass/screen.scss */
+p, a {
+  font-weight: 400;
+  color: white;
+  letter-spacing: 2px;
+}
+
+/* line 16, ../sass/screen.scss */
+.info {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  margin-top: 5px;
+  position: fixed;
+  left: 20px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+/* line 27, ../sass/screen.scss */
+.contact {
+  display: none;
+  position: fixed;
+  left: 60px;
+  bottom: 20px;
+  font-size: 11px;
+  text-transform: lowercase;
+}
+/* line 34, ../sass/screen.scss */
+.contact a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 39, ../sass/screen.scss */
+.header {
+  padding: 20px;
+}
+
+/* line 42, ../sass/screen.scss */
+.center-container {
+  position: relative;
+}
+
+/* line 45, ../sass/screen.scss */
+.absolute-center {
+  width: 50%;
+  height: 50px;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+}
+/* line 56, ../sass/screen.scss */
+.absolute-center .switcher {
+  font-size: 12px;
+  width: 70px;
+  cursor: pointer;
+  display: none;
+}
+/* line 62, ../sass/screen.scss */
+.absolute-center .colour-field {
+  font-weight: 300;
+  font-size: 37px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-right: 20px;
+  width: 300px;
+}
+/* line 70, ../sass/screen.scss */
+.absolute-center .rgb-colour-field {
+  font-weight: 300;
+  font-size: 37px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-right: 20px;
+  width: 320px;
+}
+/* line 79, ../sass/screen.scss */
+.absolute-center p {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/* line 84, ../sass/screen.scss */
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
