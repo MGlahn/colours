@@ -17,6 +17,23 @@ $(document).ready(function() {
         $("body").data("mode", mode);
     }
     
+    //See accepted answer: 
+    //http://stackoverflow.com/questions/12043187/how-to-check-if-hex-color-is-too-black?answertab=votes#tab-top
+    var isBrightColor = function(color){
+        var color = color.substring(1);      // strip #
+        var rgb = parseInt(color, 16);   // convert rrggbb to decimal
+        var r = (rgb >> 16) & 0xff;  // extract red
+        var g = (rgb >>  8) & 0xff;  // extract green
+        var b = (rgb >>  0) & 0xff;  // extract blue
+
+        var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
+
+        if (luma > 180) {
+            return true;
+        }else {
+            return false;
+        }        
+    }
     
     var setAndShowField = function(){
     
@@ -34,6 +51,12 @@ $(document).ready(function() {
                 setBg(color);
                 switchToRgb(color);
             }
+            if(isBrightColor(color)){
+                $(".absolute-center p").css("color", "black");
+            } else {
+                $(".absolute-center p").css("color", "white");
+            }
+
         }
     }
     
@@ -78,9 +101,7 @@ $(document).ready(function() {
             $("#rgb-colour-field").css("display", "none");
             $("#colour-field").show();
             $("#colour-field").text(color);
-            //$("body").data("mode", "hex");
             setMode("hex");
-
             $("#mode").text("To rgb");
         }
     }
