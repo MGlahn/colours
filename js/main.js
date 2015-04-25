@@ -1,11 +1,15 @@
 $(document).ready(function() {
+    var colorField = $("#colour-field"),
+        darkText = "black",
+        lightText = "white",
+        textToChange = $(".absolute-center p");
+    
     var getRandomColor = function(){
         var randomColor = '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6);
         return randomColor;
     }
     var isVaildHex = function(color){
-         var isOk  = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color);
-        console.log(color +' '+'ok?: '+ isOk);
+        var isOk  = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color);
         return isOk;
     }
     
@@ -17,9 +21,9 @@ $(document).ready(function() {
         $("body").data("mode", mode);
     }
     
-    //See accepted answer: 
+    //Function to check how bright the given color is.
     //http://stackoverflow.com/questions/12043187/how-to-check-if-hex-color-is-too-black?answertab=votes#tab-top
-    var isBrightColor = function(color){
+    var determineTextColor = function(color){
         var color = color.substring(1);      // strip #
         var rgb = parseInt(color, 16);   // convert rrggbb to decimal
         var r = (rgb >> 16) & 0xff;  // extract red
@@ -29,14 +33,23 @@ $(document).ready(function() {
         var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
 
         if (luma > 180) {
-            return true;
+            return darkText;
         }else {
-            return false;
-        }        
+            return lightText;
+        }
     }
     
-    var setAndShowField = function(){
+    var setAndShowField = function(color, mode, to){
+        colorField.text(color);
+        setMode(mode);
+        $("#mode").text("To "+to);
+    }
     
+    var showHex = function(color){
+        //setBg(color);
+        colorField.text(color);
+        setMode("hex");
+        $("#mode").text("To rgb");
     }
     
     var changeColor = function(){
@@ -44,32 +57,18 @@ $(document).ready(function() {
             valid = isVaildHex(color);
         if(color !== "" && valid){
             var mode = $("body").data("mode");
+            setBg(color);
             if(mode === "hex"){
-                setBg(color);
                 showHex(color);
             }else{
-                setBg(color);
                 switchToRgb(color);
             }
-            if(isBrightColor(color)){
-                $(".absolute-center p").css("color", "black");
-            } else {
-                $(".absolute-center p").css("color", "white");
-            }
-
+            var textColor = determineTextColor(color);
+            textToChange.css("color", textColor);
         }
     }
     
-    var showHex = function(color){
-        $("#rgb-colour-field").css("display", "none");
-        $("#colour-field").css("display", "inline-block");
-        setBg(color);
-        $("#colour-field").text(color);
-        setMode("hex");
-        //$("body").data("mode", "hex");
-        $("#mode").text("To rgb");
 
-    }
     
     //converting a hex color to rgb and returning a string like: 'rgb(23,24,25)'
     var convertHexToRgb = function(hexcolor){
@@ -79,18 +78,14 @@ $(document).ready(function() {
         for(var i=0; i<h.length; i++){
             h[i] = parseInt(h[i].length==1? h[i]+h[i]:h[i], 16);
         }
-        return 'rgb('+h.join(',')+')';
+        var rgb = 'rgb('+h.join(',')+')';
+        return rgb;
     }
     
     //When switching from hex to rgb
     var switchToRgb = function(hexcolor){
-        $("#colour-field").css("display", "none");
         var rgbColor = convertHexToRgb(hexcolor);
-        $("#rgb-colour-field").text(rgbColor);
-        $("#rgb-colour-field").show(); 
-        setMode("rgb");
-
-        $("#mode").text("To hex");
+        setAndShowField(rgbColor, "rgb", "hex");
     }
     
     //When switching from rgb to hex without changing the color
@@ -98,11 +93,7 @@ $(document).ready(function() {
         var color = document.location.hash;  
         var valid = isVaildHex(color);
         if(color !== "" && valid){
-            $("#rgb-colour-field").css("display", "none");
-            $("#colour-field").show();
-            $("#colour-field").text(color);
-            setMode("hex");
-            $("#mode").text("To rgb");
+            setAndShowField(color, "hex", "rgb");
         }
     }
     
@@ -110,12 +101,14 @@ $(document).ready(function() {
     var switchMode = function(){
         var mode = $("body").data("mode");
         if(mode === "hex"){
-            var color = $("#colour-field").text();
+            var color = colorField.text();
             switchToRgb(color);
         } else {
             switchToHex();
         }
     }
+    
+    //Events:
     
     //When hash change (new color is written in the hash)
     window.onhashchange = function(){
@@ -133,8 +126,7 @@ $(document).ready(function() {
     });
     
     //Clicking btn to switch from hex to rgb or vice versa
-    $("#switcher").click(function(){
-        //console.log('switch');
+    $("#mode").click(function(){
         switchMode();
     });
     
@@ -144,5 +136,4 @@ $(document).ready(function() {
     });
     
     changeColor();
-    //switchMode();
 });

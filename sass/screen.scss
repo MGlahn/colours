@@ -1,4 +1,5 @@
 @import "compass/reset";
+
  body {
     height: 100%;
     width: 100%;
@@ -7,10 +8,8 @@
     color: white;
 }
 p, a {
-    //        font-size: 16px;
     font-weight: 400;
     color: white;
-    //text-transform: uppercase;
     letter-spacing: 2px;
 }
 .info {
@@ -18,7 +17,6 @@ p, a {
     height: 30px;
     font-size: 30px;
     margin-top: 5px;
-    //text-transform: lowercase;
     position: fixed;
     left: 20px;
     bottom: 10px;
@@ -55,32 +53,37 @@ p, a {
     text-align: center;
     .switcher {
         font-size: 12px;
-        //width: 70px;
-        cursor: pointer;
-        //display: none;
+        //cursor: pointer;
         margin-top: 30px;
+        display: inline-block;
+//float: left;
         text-transform: uppercase;
+        margin-right: 15px;
+        span#mode {
+            cursor: pointer;
+        }
+    }
+    .add-colour {
+        font-size: 12px;
+        //cursor: pointer;
+        margin-top: 30px;
+
+        text-transform: uppercase;
+        margin-right: 15px;
+        margin-left: 15px;
+        display: inline-block;
+        cursor: pointer;
     }
     .colour-field {
         font-weight: 300;
         font-size: 37px;
         text-transform: uppercase;
         letter-spacing: 5px;
-        //margin-right: 20px;
-        //width: 300px;
-    }
-    .rgb-colour-field {
-        font-weight: 300;
-        font-size: 37px;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        //margin-right: 20px;
-       // width: 320px;
-        
-    }
-    p {
-        //display: inline-block;
-        vertical-align: bottom;
+        margin-right: 15px;
+        display: block;
+        clear: both;
+               // display: inline-block;
+
     }
 }
 .unselectable {

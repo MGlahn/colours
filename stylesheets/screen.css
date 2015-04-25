@@ -63,7 +63,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 2, ../sass/screen.scss */
+/* line 3, ../sass/screen.scss */
 body {
   height: 100%;
   width: 100%;
@@ -72,14 +72,14 @@ body {
   color: white;
 }
 
-/* line 9, ../sass/screen.scss */
+/* line 10, ../sass/screen.scss */
 p, a {
   font-weight: 400;
   color: white;
   letter-spacing: 2px;
 }
 
-/* line 16, ../sass/screen.scss */
+/* line 15, ../sass/screen.scss */
 .info {
   width: 30px;
   height: 30px;
@@ -91,7 +91,7 @@ p, a {
   cursor: pointer;
 }
 
-/* line 27, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 .contact {
   display: none;
   position: fixed;
@@ -100,23 +100,23 @@ p, a {
   font-size: 11px;
   text-transform: lowercase;
 }
-/* line 34, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 .contact a {
   text-decoration: none;
   cursor: pointer;
 }
 
-/* line 39, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
 .header {
   padding: 20px;
 }
 
-/* line 42, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 .center-container {
   position: relative;
 }
 
-/* line 45, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 .absolute-center {
   width: 50%;
   height: 100px;
@@ -129,33 +129,40 @@ p, a {
   right: 0;
   text-align: center;
 }
-/* line 56, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 .absolute-center .switcher {
   font-size: 12px;
+  margin-top: 30px;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-right: 15px;
+}
+/* line 62, ../sass/screen.scss */
+.absolute-center .switcher span#mode {
   cursor: pointer;
+}
+/* line 66, ../sass/screen.scss */
+.absolute-center .add-colour {
+  font-size: 12px;
   margin-top: 30px;
   text-transform: uppercase;
+  margin-right: 15px;
+  margin-left: 15px;
+  display: inline-block;
+  cursor: pointer;
 }
-/* line 64, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 .absolute-center .colour-field {
   font-weight: 300;
   font-size: 37px;
   text-transform: uppercase;
   letter-spacing: 5px;
-}
-/* line 72, ../sass/screen.scss */
-.absolute-center .rgb-colour-field {
-  font-weight: 300;
-  font-size: 37px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-}
-/* line 81, ../sass/screen.scss */
-.absolute-center p {
-  vertical-align: bottom;
+  margin-right: 15px;
+  display: block;
+  clear: both;
 }
 
-/* line 86, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
