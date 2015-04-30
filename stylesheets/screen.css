@@ -110,13 +110,39 @@ p, a {
 .header {
   padding: 20px;
 }
+/* line 39, ../sass/screen.scss */
+.header a {
+  text-decoration: none;
+}
+/* line 42, ../sass/screen.scss */
+.header .left {
+  display: inline-block;
+  float: left;
+}
+/* line 46, ../sass/screen.scss */
+.header .right {
+  display: inline-block;
+  float: right;
+}
+/* line 49, ../sass/screen.scss */
+.header .right .circle {
+  border: 1px solid white;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  display: inline-block;
+  float: right;
+}
 
-/* line 40, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 .center-container {
   position: relative;
 }
 
-/* line 43, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .absolute-center {
   width: 50%;
   height: 100px;
@@ -129,7 +155,7 @@ p, a {
   right: 0;
   text-align: center;
 }
-/* line 54, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 .absolute-center .switcher {
   font-size: 12px;
   margin-top: 30px;
@@ -137,11 +163,11 @@ p, a {
   text-transform: uppercase;
   margin-right: 15px;
 }
-/* line 62, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 .absolute-center .switcher span#mode {
   cursor: pointer;
 }
-/* line 66, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 .absolute-center .add-colour {
   font-size: 12px;
   margin-top: 30px;
@@ -151,7 +177,11 @@ p, a {
   display: inline-block;
   cursor: pointer;
 }
-/* line 77, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
+.absolute-center .add-colour.hidden {
+  display: none;
+}
+/* line 103, ../sass/screen.scss */
 .absolute-center .colour-field {
   font-weight: 300;
   font-size: 37px;
@@ -162,7 +192,7 @@ p, a {
   clear: both;
 }
 
-/* line 89, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;

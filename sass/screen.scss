@@ -36,6 +36,29 @@ p, a {
 }
 .header {
     padding: 20px;
+    a {
+        text-decoration: none;
+    }
+    .left {
+        display: inline-block;
+        float: left;
+    }
+    .right {
+        display: inline-block;
+        float: right;
+        .circle {
+            border: 1px solid white;
+//            background-color: black;
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            -moz-border-radius: 50%; 
+            -webkit-border-radius: 50%; 
+            display: inline-block;
+            float: right;
+        }
+    }
 }
 .center-container {
     position: relative;
@@ -73,6 +96,9 @@ p, a {
         margin-left: 15px;
         display: inline-block;
         cursor: pointer;
+        &.hidden {
+            display: none;
+        }
     }
     .colour-field {
         font-weight: 300;

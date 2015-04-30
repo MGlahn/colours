@@ -2,7 +2,16 @@ $(document).ready(function() {
     var colorField = $("#colour-field"),
         darkText = "black",
         lightText = "white",
-        textToChange = $(".absolute-center p");
+        textToChange = $(".absolute-center p"),
+        colourarray = new Array,
+        circleArea = $('#circlearea');
+    
+    //localStorage.removeItem("selectedcolours");
+    
+    if(typeof localStorage["selectedcolours"] !== 'undefined' ){
+        colourarray = JSON.parse(localStorage["selectedcolours"]);
+        //console.log(localStorage["selectedcolours"]);
+    }
     
     var getRandomColor = function(){
         var randomColor = '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6);
@@ -56,6 +65,9 @@ $(document).ready(function() {
         var color = document.location.hash,
             valid = isVaildHex(color);
         if(color !== "" && valid){
+            if($('#add').hasClass('hidden')) {
+                $('#add').removeClass('hidden');
+            }
             var mode = $("body").data("mode");
             setBg(color);
             if(mode === "hex"){
@@ -108,6 +120,11 @@ $(document).ready(function() {
         }
     }
     
+    var appendColourCircle = function(colour) {
+        var circleHtml = '<span class="circle" data-circlecolour="'+colour+'" style="background:'+colour+';"></span>';
+        circleArea.append(circleHtml);
+        
+    }
     //Events:
     
     //When hash change (new color is written in the hash)
@@ -130,10 +147,30 @@ $(document).ready(function() {
         switchMode();
     });
     
+    //Clicking btn to switch from hex to rgb or vice versa
+    $("#add").click(function(){
+        //console.log(colourarray);
+
+        if(typeof(Storage) !== "undefined") {
+            var colour = document.location.hash;
+            if(colourarray.indexOf(colour) === -1){     
+                colourarray.push(colour);
+                localStorage["selectedcolours"] = JSON.stringify(colourarray);
+                appendColourCircle(colour);
+            }
+            //console.log(colourarray);
+        } else {
+            console.log('not supported');
+
+            // Sorry! No Web Storage support..
+        }
+    });
+    
     //View page info:
     $("#info").click(function(){
         $("#contact").toggle("fast");
     });
     
     changeColor();
+                console.log(colourarray);
 });
